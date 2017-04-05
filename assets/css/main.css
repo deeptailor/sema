@@ -1,0 +1,24 @@
+.splash-container{
+  background: url('https://res.cloudinary.com/deeptailor/image/upload/q_64/v1491352731/sema/sema_splash.jpg');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nickname{
+  width: 200px;
+  height: 30px;
+  background: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+#submit{
+  font-size: 30px;
+}
