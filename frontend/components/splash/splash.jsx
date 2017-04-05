@@ -10,7 +10,6 @@ class Splash extends React.Component{
       <div className='splash-container'>
         <form className="splash-form">
           <input className="nickname" type="text" placeholder="Enter your Nickname"></input>
-          <input id="submit" type="submit" value="Enter Chat"></input>
         </form>
       </div>
     )

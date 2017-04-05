@@ -24362,8 +24362,7 @@ var Splash = function (_React$Component) {
         _react2.default.createElement(
           'form',
           { className: 'splash-form' },
-          _react2.default.createElement('input', { className: 'nickname', type: 'text', placeholder: 'Enter your Nickname' }),
-          _react2.default.createElement('input', { id: 'submit', type: 'submit', value: 'Enter Chat' })
+          _react2.default.createElement('input', { className: 'nickname', type: 'text', placeholder: 'Enter your Nickname' })
         )
       );
     }
