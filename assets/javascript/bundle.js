@@ -22241,12 +22241,30 @@ var Chat = function (_React$Component) {
   }
 
   _createClass(Chat, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {}
+  }, {
+    key: "renderChatMessages",
+    value: function renderChatMessages() {
+      return _react2.default.createElement("ul", { className: "chat-messages" });
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
         "div",
         { className: "chat-container" },
-        "Chat Room"
+        this.renderChatMessages(),
+        _react2.default.createElement(
+          "div",
+          { className: "chat-input-container" },
+          _react2.default.createElement("input", { className: "chat-input", placeholder: "Enter Text Here" }),
+          _react2.default.createElement(
+            "div",
+            { className: "chat-submit" },
+            "Send"
+          )
+        )
       );
     }
   }]);
