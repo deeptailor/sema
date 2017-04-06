@@ -1,3 +1,6 @@
+.splash-outer-container {
+}
+
 .splash-container{
   background: url('https://res.cloudinary.com/deeptailor/image/upload/v1491372128/sema/sema-splash.jpg');
   background-size: cover;
@@ -6,6 +9,7 @@
   height: 100vh;
   overflow: hidden;
   font-family: 'Balthazar', serif;
+  position: relative;
 }
 
 .splash-overlay{
@@ -21,9 +25,12 @@
 .splash-container h1{
   font-family: 'Balthazar', serif;
   color: white;
-  font-size: 84px;
+  /*font-size: 84px;*/
+  font-size: 10vmin;
   position: relative;
   bottom: 200px;
+
+
 }
 
 .splash-container h1:hover {
@@ -32,6 +39,10 @@
 
 
 .splash-form{
+  width: 17vw;
+  height:12vh;
+  min-width: 100px;
+  min-height: 50px;
   padding: 40px;
   border: 2px solid white;
   border-radius: 10px;
@@ -39,11 +50,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
-.nickname{
-  width: 260px;
-  height: 40px;
+.nickname {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  min-width: 56px;
+  min-height: 11px;
+
   background: white;
   border: 1px solid gray;
   border-radius: 5px;
@@ -52,13 +68,22 @@
   margin: 0 0 20px 0;
 }
 
+.nickname::-webkit-input-placeholder {
+  font-size: 1.2vw;
+}
+
 .enter-chat-button {
-  width: 131px;
-  height: 42px;
+  width: 8vw;
+  height: 5vh;
+  min-width:44px;
+  min-height:11px;
+  /*width: 131px;*/
+  /*height: 42px;*/
   background: #00ff3d;
   color: white;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 1.3vw;
+  /*font-size: 20px;*/
   display: flex;
   align-items: center;
   justify-content: center;

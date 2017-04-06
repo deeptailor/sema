@@ -24384,23 +24384,27 @@ var Splash = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'splash-container' },
+        { className: 'splash-outer-container' },
         _react2.default.createElement(
           'div',
-          { className: 'splash-overlay' },
+          { className: 'splash-container' },
           _react2.default.createElement(
-            'h1',
-            null,
-            'SEMA.chat'
-          ),
-          _react2.default.createElement(
-            'form',
-            { className: 'splash-form' },
-            _react2.default.createElement('input', { className: 'nickname', type: 'text', placeholder: 'Please Enter Your Nickname' }),
+            'div',
+            { className: 'splash-overlay' },
             _react2.default.createElement(
-              'div',
-              { className: 'enter-chat-button', onClick: this.clickEnterChat },
-              'Enter Chat'
+              'h1',
+              null,
+              'SEMA.chat'
+            ),
+            _react2.default.createElement(
+              'form',
+              { className: 'splash-form' },
+              _react2.default.createElement('input', { className: 'nickname', type: 'text', placeholder: 'Please Enter Your Nickname' }),
+              _react2.default.createElement(
+                'div',
+                { className: 'enter-chat-button', onClick: this.clickEnterChat },
+                'Enter Chat'
+              )
             )
           )
         )
