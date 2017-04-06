@@ -18,13 +18,18 @@
   align-items: center;
 }
 
-h1{
+.splash-container h1{
   font-family: 'Balthazar', serif;
   color: white;
   font-size: 84px;
   position: relative;
   bottom: 200px;
 }
+
+.splash-container h1:hover {
+  cursor: default;
+}
+
 
 .splash-form{
   padding: 40px;
@@ -47,7 +52,7 @@ h1{
   margin: 0 0 20px 0;
 }
 
-.enter-chat-button{
+.enter-chat-button {
   width: 131px;
   height: 42px;
   background: #00ff3d;
@@ -57,4 +62,9 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.enter-chat-button:hover {
+  cursor: pointer;
+  color: black;
 }
