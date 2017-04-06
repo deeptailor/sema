@@ -22316,13 +22316,13 @@ var Splash = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'splash-outer-container' },
+        { className: 'splash-container' },
         _react2.default.createElement(
           'div',
-          { className: 'splash-container' },
+          { className: 'splash-overlay' },
           _react2.default.createElement(
             'div',
-            { className: 'splash-overlay' },
+            { className: 'splash-inner-container' },
             _react2.default.createElement(
               'h1',
               null,
