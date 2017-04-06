@@ -4,12 +4,19 @@ import $ from 'jquery';
 class Splash extends React.Component{
   constructor(props){
     super(props);
+    this.clickEnterChat = this.clickEnterChat.bind(this);
+    this.routerPush = this.routerPush.bind(this);
   }
 
   clickEnterChat(){
     document.cookie = "";
     let nickname = $('.nickname').val();
     document.cookie = `name=${nickname}`;
+    this.routerPush('chat');
+  }
+
+  routerPush(route){
+    this.props.router.push(route);
   }
 
   render(){
