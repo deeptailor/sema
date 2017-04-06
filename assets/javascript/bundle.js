@@ -37161,6 +37161,9 @@ var Chat = function (_React$Component) {
   }
 
   _createClass(Chat, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {}
+  }, {
     key: "renderChatMessages",
     value: function renderChatMessages() {
       return _react2.default.createElement("ul", { className: "chat-messages" });

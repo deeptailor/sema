@@ -5,6 +5,10 @@ class Chat extends React.Component{
     super(props);
   }
 
+  componentWillMount(){
+    
+  }
+
   renderChatMessages(){
     return(
       <ul className="chat-messages"></ul>
