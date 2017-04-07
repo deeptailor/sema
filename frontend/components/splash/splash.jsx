@@ -21,17 +21,17 @@ class Splash extends React.Component{
 
   render(){
     return(
-      <div className="splash-outer-container">
         <div className='splash-container'>
-          <div className="splash-overlay">
-            <h1>SEMA.chat</h1>
-            <form className="splash-form">
-              <input className="nickname" type="text" placeholder="Please Enter Your Nickname"></input>
-              <div className="enter-chat-button" onClick={this.clickEnterChat}>Enter Chat</div>
-            </form>
-          </div>
+            <div className="splash-overlay">
+              <div className="splash-inner-container">
+                <h1>SEMA.chat</h1>
+                <form className="splash-form">
+                  <input className="nickname" type="text" placeholder="Please Enter Your Nickname"></input>
+                  <div className="enter-chat-button" onClick={this.clickEnterChat}>Enter Chat</div>
+                </form>
+              </div>
+            </div>
         </div>
-      </div>
     )
   }
 }
