@@ -21719,6 +21719,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = __webpack_require__(229);
 
+var _jquery = __webpack_require__(235);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 var _splash = __webpack_require__(208);
 
 var _splash2 = _interopRequireDefault(_splash);
@@ -21729,12 +21733,18 @@ var _chat2 = _interopRequireDefault(_chat);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _redirectIfNoNickname(nextState, replace) {
+  if (!(0, _jquery2.default)('body').data('currentUser')) {
+    replace('/');
+  }
+}
+
 var Root = function Root() {
   return _react2.default.createElement(
     _reactRouter.Router,
     { history: _reactRouter.hashHistory },
     _react2.default.createElement(_reactRouter.Route, { path: '/', component: _splash2.default }),
-    _react2.default.createElement(_reactRouter.Route, { path: '/chat', component: _chat2.default })
+    _react2.default.createElement(_reactRouter.Route, { path: '/chat', component: _chat2.default, onEnter: _redirectIfNoNickname })
   );
 };
 
@@ -24371,7 +24381,7 @@ var Splash = function (_React$Component) {
     value: function clickEnterChat() {
       document.cookie = "";
       var nickname = (0, _jquery2.default)('.nickname').val();
-      window.currentUser = nickname;
+      (0, _jquery2.default)('body').data('currentUser', nickname);
       this.routerPush('chat');
     }
   }, {
@@ -37159,6 +37169,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+function getCurrentUser() {
+  return (0, _jquery2.default)('body').data('currentUser');
+}
+
 var Chat = function (_React$Component) {
   _inherits(Chat, _React$Component);
 
@@ -37167,7 +37181,7 @@ var Chat = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Chat.__proto__ || Object.getPrototypeOf(Chat)).call(this, props));
 
-    _this.state = { currentUser: window.currentUser, users: [], messages: [], text: '' };
+    _this.state = { currentUser: getCurrentUser(), users: [], messages: [], text: '' };
     _this._initialize = _this._initialize.bind(_this);
     _this._messageReceive = _this._messageReceive.bind(_this);
     _this.handleMessageSubmit = _this.handleMessageSubmit.bind(_this);
@@ -37200,6 +37214,7 @@ var Chat = function (_React$Component) {
     key: 'handleMessageSubmit',
     value: function handleMessageSubmit() {
       var message = this.state.currentUser + ': ' + (0, _jquery2.default)('.chat-input').val();
+      (0, _jquery2.default)('.chat-input').val('');
       var messages = this.state.messages;
 
       messages.push(message);

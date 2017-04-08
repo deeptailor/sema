@@ -1,10 +1,13 @@
 import React from 'react';
 import $ from 'jquery';
 
+function getCurrentUser(){
+  return $('body').data('currentUser');
+}
 class Chat extends React.Component{
   constructor(props){
     super(props);
-    this.state = {currentUser: window.currentUser, users: [], messages:[], text: ''};
+    this.state = {currentUser: getCurrentUser(), users: [], messages:[], text: ''};
     this._initialize = this._initialize.bind(this);
     this._messageReceive = this._messageReceive.bind(this);
     this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
@@ -28,6 +31,7 @@ class Chat extends React.Component{
 
   handleMessageSubmit() {
       var message = `${this.state.currentUser}: ${$('.chat-input').val()}`
+      $('.chat-input').val('');
       var {messages} = this.state;
       messages.push(message);
       this.setState({messages});
