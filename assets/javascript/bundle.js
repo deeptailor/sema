@@ -22223,6 +22223,10 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _jquery = __webpack_require__(111);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22237,32 +22241,77 @@ var Chat = function (_React$Component) {
   function Chat(props) {
     _classCallCheck(this, Chat);
 
-    return _possibleConstructorReturn(this, (Chat.__proto__ || Object.getPrototypeOf(Chat)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Chat.__proto__ || Object.getPrototypeOf(Chat)).call(this, props));
+
+    _this.state = { currentUser: window.currentUser, users: [], messages: [], text: '' };
+    _this._initialize = _this._initialize.bind(_this);
+    _this._messageReceive = _this._messageReceive.bind(_this);
+    _this.handleMessageSubmit = _this.handleMessageSubmit.bind(_this);
+    return _this;
   }
 
   _createClass(Chat, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {}
-  }, {
-    key: "renderChatMessages",
-    value: function renderChatMessages() {
-      return _react2.default.createElement("ul", { className: "chat-messages" });
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      socket.on('init', this._initialize);
+      socket.on('send:message', this._messageReceive);
     }
   }, {
-    key: "render",
+    key: '_initialize',
+    value: function _initialize(data) {
+      var users = data.users,
+          name = data.name;
+
+      this.setState({ users: users, user: name });
+    }
+  }, {
+    key: '_messageReceive',
+    value: function _messageReceive(message) {
+      var messages = this.state.messages;
+
+      messages.push(message);
+      this.setState({ messages: messages });
+    }
+  }, {
+    key: 'handleMessageSubmit',
+    value: function handleMessageSubmit() {
+      var message = this.state.currentUser + ': ' + (0, _jquery2.default)('.chat-input').val();
+      var messages = this.state.messages;
+
+      messages.push(message);
+      this.setState({ messages: messages });
+      socket.emit('send:message', message);
+    }
+  }, {
+    key: 'renderChatMessages',
+    value: function renderChatMessages() {
+      return this.state.messages.map(function (message, i) {
+        return _react2.default.createElement(
+          'li',
+          { key: 'message-' + i },
+          message
+        );
+      });
+    }
+  }, {
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "div",
-        { className: "chat-container" },
-        this.renderChatMessages(),
+        'div',
+        { className: 'chat-container' },
         _react2.default.createElement(
-          "div",
-          { className: "chat-input-container" },
-          _react2.default.createElement("input", { className: "chat-input", placeholder: "Enter Text Here" }),
+          'ul',
+          { className: 'chat-messages' },
+          this.renderChatMessages()
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'chat-input-container' },
+          _react2.default.createElement('input', { className: 'chat-input', placeholder: 'Enter Text Here' }),
           _react2.default.createElement(
-            "div",
-            { className: "chat-submit" },
-            "Send"
+            'div',
+            { className: 'chat-submit', onClick: this.handleMessageSubmit },
+            'Send'
           )
         )
       );
@@ -22321,7 +22370,7 @@ var Splash = function (_React$Component) {
     value: function clickEnterChat() {
       document.cookie = "";
       var nickname = (0, _jquery2.default)('.nickname').val();
-      document.cookie = 'name=' + nickname;
+      window.currentUser = nickname;
       this.routerPush('chat');
     }
   }, {

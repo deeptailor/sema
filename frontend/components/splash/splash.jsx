@@ -11,7 +11,7 @@ class Splash extends React.Component{
   clickEnterChat(){
     document.cookie = "";
     let nickname = $('.nickname').val();
-    document.cookie = `name=${nickname}`;
+    window.currentUser = nickname;
     this.routerPush('chat');
   }
 
