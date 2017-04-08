@@ -1,3 +1,10 @@
+#root{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
 
 .splash-container{
   background: url('https://res.cloudinary.com/deeptailor/image/upload/v1491372128/sema/sema-splash.jpg');
@@ -6,7 +13,6 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  font-family: 'Balthazar', serif;
   position: relative;
 }
 
@@ -28,7 +34,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
 }
 
 .splash-header {
@@ -37,7 +42,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  top: 10%;
+  top: 5%;
   width: 100%;
   /*border:1px solid white;*/
 }
@@ -139,17 +144,27 @@
 /*chat*/
 
 .chat-container{
-  width: 100vw;
-  height: 100vh;
+  width: 80%;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Raleway', sans-serif;
 }
 
 .chat-messages{
   width: 100%;
   height: 90%;
+  padding: 10px 5px;
+  box-sizing: border-box;
   overflow: scroll;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 1);
+}
+
+.chat-messages li{
+  padding: 5px;
+  color: white;
 }
 
 .chat-input-container{
@@ -163,8 +178,8 @@
   width: 90%;
   padding: 10px;
   box-sizing: border-box;
-  border: 2px solid gray;
   font-size: 24px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .chat-submit{
@@ -174,6 +189,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.chat-submit:hover{
+  cursor: pointer;
 }
 
 
