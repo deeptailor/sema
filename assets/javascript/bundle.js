@@ -22343,7 +22343,7 @@ var Chat = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Chat.__proto__ || Object.getPrototypeOf(Chat)).call(this, props));
 
-    _this.state = { currentUser: getCurrentUser(), users: [], messages: [], text: '' };
+    _this.state = { currentUser: getCurrentUser(), users: [], ownMessages: [], messages: [], text: '' };
     _this._initialize = _this._initialize.bind(_this);
     _this._messageReceive = _this._messageReceive.bind(_this);
     _this.handleMessageSubmit = _this.handleMessageSubmit.bind(_this);
@@ -22384,14 +22384,43 @@ var Chat = function (_React$Component) {
       socket.emit('send:message', message);
     }
   }, {
+    key: 'renderChatBubble',
+    value: function renderChatBubble(name, message, key) {
+      var className = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "";
+
+      return _react2.default.createElement(
+        'li',
+        { key: key, className: 'chat-bubble-container ' + className },
+        _react2.default.createElement(
+          'div',
+          { className: 'chat-bubble' },
+          _react2.default.createElement(
+            'h1',
+            null,
+            name
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            message
+          )
+        )
+      );
+    }
+  }, {
     key: 'renderChatMessages',
     value: function renderChatMessages() {
+      var _this2 = this;
+
       return this.state.messages.map(function (message, i) {
-        return _react2.default.createElement(
-          'li',
-          { key: 'message-' + i },
-          message
-        );
+        message = message.split(': ');
+        if (message[0] === _this2.state.currentUser) {
+          return _this2.renderChatBubble(_this2.state.currentUser, message[1], 'message-' + i, 'own-message');
+        } else if (message[0] === 'SemaBot') {
+          return _this2.renderChatBubble('SemaBot', message[1], 'bot-message-' + i, 'bot-message');
+        } else {
+          return _this2.renderChatBubble(message[0], message[1], 'message-' + i);
+        }
       });
     }
   }, {
@@ -22412,7 +22441,7 @@ var Chat = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'chat-submit', onClick: this.handleMessageSubmit },
-            'Send'
+            _react2.default.createElement('i', { className: 'fa fa-paper-plane', 'aria-hidden': 'true' })
           )
         )
       );

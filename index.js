@@ -10,8 +10,8 @@ app.get('/', function(req,res){
 });
 
 io.on('connection', function(socket){
+  io.emit('send:message', "SemaBot: a new user just connected");
   socket.on('send:message', function(msg){
-    console.log(msg);
     socket.broadcast.emit('send:message', msg)
   });
 });
