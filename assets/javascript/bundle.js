@@ -22342,9 +22342,27 @@ var Splash = function (_React$Component) {
             'div',
             { className: 'splash-inner-container' },
             _react2.default.createElement(
-              'h1',
-              null,
-              'SEMA.chat'
+              'div',
+              { className: 'splash-header' },
+              _react2.default.createElement(
+                'h1',
+                null,
+                'sema'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'splash-buttons' },
+                _react2.default.createElement(
+                  'div',
+                  null,
+                  'About'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  null,
+                  'Contact'
+                )
+              )
             ),
             _react2.default.createElement(
               'form',

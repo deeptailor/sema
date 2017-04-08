@@ -24,7 +24,13 @@ class Splash extends React.Component{
         <div className='splash-container'>
             <div className="splash-overlay">
               <div className="splash-inner-container">
-                <h1>SEMA.chat</h1>
+                <div className="splash-header">
+                  <h1>sema</h1>
+                  <div className="splash-buttons">
+                    <div>About</div>
+                    <div>Contact</div>
+                  </div>
+                </div>
                 <form className="splash-form">
                   <input className="nickname" type="text" placeholder="Please Enter Your Nickname"></input>
                   <div className="enter-chat-button" onClick={this.clickEnterChat}>Enter Chat</div>
