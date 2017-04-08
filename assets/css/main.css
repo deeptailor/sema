@@ -13,7 +13,7 @@
 .splash-overlay{
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,34 +23,67 @@
 .splash-inner-container {
   display:flex;
   position: relative;
-  width: 960px;
-  height:960px;
+  width: 100vw;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid white;
 }
 
-.splash-container h1{
-  font-family: 'Balthazar', serif;
-  color: white;
-  /*font-size: 84px;*/
-  font-size: 10vmin;
+.splash-header {
   position: absolute;
-  /*bottom: 200px;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   top: 10%;
+  width: 100%;
+  /*border:1px solid white;*/
+}
+
+.splash-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: white;
+  width: 200px;
+  margin-right: 50px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  /*border: 1px solid white;*/
+}
+
+.splash-buttons div{
+  text-align: center;
+}
+
+.splash-buttons div:hover {
+  cursor: pointer;
+  border-bottom: 1px solid white;
+  padding-bottom: 3px;
 
 }
 
-.splash-container h1:hover {
+.splash-header h1 {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 68px;
+  position: relative;
+  left: 5%;
+  padding-bottom: 20px;
+}
+
+.splash-header h1:hover {
   cursor: default;
 }
 
 
 .splash-form{
-  width: 17vw;
-  height:12vh;
-  min-width: 100px;
-  min-height: 10px;
+  width: 300px;
+  height: 100px;
   padding: 40px;
   border: 2px solid white;
   border-radius: 10px;
@@ -64,44 +97,43 @@
 
 .nickname {
   position: relative;
-  width: 100%;
-  height: 30%;
-  min-width: 56px;
-  min-height: 11px;
-
-  background: white;
-  border: 1px solid gray;
+  width: 250px;
+  height: 40px;
+  background: rgba(255,255,255,0.2);
+  border: 2px solid white;
+  box-sizing: border-box;
   border-radius: 5px;
-  /*font-size: 20px;*/
-  font-size: 1.2vw;
-  text-align: center;
+  font-size: 16px;
   margin: 0 0 20px 0;
+  padding: 0 10px;
+  font-family: 'Raleway', sans-serif;
+  color: rgba(240,240,240,0.8);
 }
 
 .nickname::-webkit-input-placeholder {
-  font-size: 1.2vw;
+  font-size: 16px;
+  text-align: center;
+  color: rgba(250,250,250,0.7);
 }
 
 .enter-chat-button {
-  width: 8vw;
-  height: 5vh;
-  min-width:44px;
-  min-height:11px;
-  /*width: 131px;*/
-  /*height: 42px;*/
-  background: #00ff3d;
+  width: 100px;
+  height: 30px;
+  border: 2px solid rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.4);
   color: white;
   border-radius: 5px;
-  font-size: 1.3vw;
-  /*font-size: 20px;*/
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Raleway', sans-serif;
 }
 
 .enter-chat-button:hover {
   cursor: pointer;
-  color: black;
+  background-color: #00ff3d;
+  border: 2px solid #00ff3d;
 }
 
 /*chat*/
@@ -143,3 +175,6 @@
   justify-content: center;
   align-items: center;
 }
+
+
+/*Media*/
