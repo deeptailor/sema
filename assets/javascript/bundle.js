@@ -22375,7 +22375,8 @@ var Chat = function (_React$Component) {
   }, {
     key: 'handleMessageSubmit',
     value: function handleMessageSubmit() {
-      var message = this.state.currentUser + ': ' + (0, _jquery2.default)('.chat-input').val();
+      var messageObject = { user: this.state.currentUser, message: (0, _jquery2.default)('.chat-input').val() };
+      var message = JSON.stringify(messageObject);
       (0, _jquery2.default)('.chat-input').val('');
       var messages = this.state.messages;
 
@@ -22413,13 +22414,13 @@ var Chat = function (_React$Component) {
       var _this2 = this;
 
       return this.state.messages.map(function (message, i) {
-        message = message.split(': ');
-        if (message[0] === _this2.state.currentUser) {
-          return _this2.renderChatBubble(_this2.state.currentUser, message[1], 'message-' + i, 'own-message');
-        } else if (message[0] === 'SemaBot') {
-          return _this2.renderChatBubble('SemaBot', message[1], 'bot-message-' + i, 'bot-message');
+        message = JSON.parse(message);
+        if (message.user === _this2.state.currentUser) {
+          return _this2.renderChatBubble(_this2.state.currentUser, message.message, 'message-' + i, 'own-message');
+        } else if (message.user === 'SemaBot') {
+          return _this2.renderChatBubble('SemaBot', message.message, 'bot-message-' + i, 'bot-message');
         } else {
-          return _this2.renderChatBubble(message[0], message[1], 'message-' + i);
+          return _this2.renderChatBubble(message.user, message.message, 'message-' + i);
         }
       });
     }

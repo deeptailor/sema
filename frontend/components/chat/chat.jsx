@@ -30,7 +30,8 @@ class Chat extends React.Component{
   }
 
   handleMessageSubmit() {
-      var message = `${this.state.currentUser}: ${$('.chat-input').val()}`
+      var messageObject = {user: this.state.currentUser, message: $('.chat-input').val()};
+      var message = JSON.stringify(messageObject);
       $('.chat-input').val('');
       var {messages} = this.state;
       messages.push(message);
@@ -52,13 +53,13 @@ class Chat extends React.Component{
   renderChatMessages(){
     return(
       this.state.messages.map((message,i) => {
-        message = message.split(': ');
-        if(message[0] === this.state.currentUser){
-          return(this.renderChatBubble(this.state.currentUser, message[1], `message-${i}`, 'own-message'));
-        } else if(message[0] === 'SemaBot'){
-          return(this.renderChatBubble('SemaBot', message[1], `bot-message-${i}`, 'bot-message'));
+        message = JSON.parse(message);
+        if(message.user === this.state.currentUser){
+          return(this.renderChatBubble(this.state.currentUser, message.message, `message-${i}`, 'own-message'));
+        } else if(message.user === 'SemaBot'){
+          return(this.renderChatBubble('SemaBot', message.message, `bot-message-${i}`, 'bot-message'));
         } else {
-          return(this.renderChatBubble(message[0], message[1], `message-${i}`));
+          return(this.renderChatBubble(message.user, message.message, `message-${i}`));
         }
       })
     );
