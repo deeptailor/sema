@@ -167,10 +167,13 @@
 
 .chat-bubble-container{
   display: flex;
+  align-items: flex-start;
   padding: 5px;
+  margin-bottom: 53px;
   color: white;
   width: 90%;
   min-height: 30px;
+  flex-grow: 1;
 }
 
 .chat-bubble{
@@ -181,7 +184,7 @@
   position: relative;
   border-radius: 0 10px 10px 10px;
   border: solid white;
-  overflow-y: scroll;
+  height: 100%;
 }
 
 .chat-bubble h1{
@@ -191,7 +194,6 @@
 
 .own-message{
   justify-content: flex-end;
-  align-items: flex-end;
 }
 
 .own-message .chat-bubble{
@@ -205,7 +207,6 @@
 
 .bot-message{
   justify-content: center;
-  align-items: center;
 }
 
 .bot-message .chat-bubble{
