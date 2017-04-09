@@ -177,7 +177,10 @@
 }
 
 .chat-bubble{
-  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 33%;
   background: white;
   color: black;
   padding: 10px;
@@ -190,6 +193,12 @@
 .chat-bubble h1{
   color: #003bb1;
   margin-bottom: 5px;
+}
+
+.chat-bubble p{
+  width: 100%;
+  display: flex;
+  flex-shrink: 1;
 }
 
 .own-message{
