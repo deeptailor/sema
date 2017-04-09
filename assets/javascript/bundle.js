@@ -22257,7 +22257,7 @@ var Chat = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Chat.__proto__ || Object.getPrototypeOf(Chat)).call(this, props));
 
-    _this.state = { currentUser: getCurrentUser(), users: [], messages: [], text: '' };
+    _this.state = { currentUser: getCurrentUser(), users: [], ownMessages: [], messages: [], text: '' };
     _this._initialize = _this._initialize.bind(_this);
     _this._messageReceive = _this._messageReceive.bind(_this);
     _this.handleMessageSubmit = _this.handleMessageSubmit.bind(_this);
@@ -22265,10 +22265,23 @@ var Chat = function (_React$Component) {
   }
 
   _createClass(Chat, [{
+    key: 'componentWillUpdate',
+    value: function componentWillUpdate() {
+      var chatBox = document.getElementById('chat-messages');
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var _this2 = this;
+
       socket.on('init', this._initialize);
       socket.on('send:message', this._messageReceive);
+      document.addEventListener('keydown', function (e) {
+        if (e.keyCode === 13) {
+          _this2.handleMessageSubmit();
+        }
+      });
     }
   }, {
     key: '_initialize',
@@ -22289,7 +22302,8 @@ var Chat = function (_React$Component) {
   }, {
     key: 'handleMessageSubmit',
     value: function handleMessageSubmit() {
-      var message = this.state.currentUser + ': ' + (0, _jquery2.default)('.chat-input').val();
+      var messageObject = { user: this.state.currentUser, message: (0, _jquery2.default)('.chat-input').val() };
+      var message = JSON.stringify(messageObject);
       (0, _jquery2.default)('.chat-input').val('');
       var messages = this.state.messages;
 
@@ -22298,14 +22312,43 @@ var Chat = function (_React$Component) {
       socket.emit('send:message', message);
     }
   }, {
+    key: 'renderChatBubble',
+    value: function renderChatBubble(name, message, key) {
+      var className = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "";
+
+      return _react2.default.createElement(
+        'li',
+        { key: key, className: 'chat-bubble-container ' + className },
+        _react2.default.createElement(
+          'div',
+          { className: 'chat-bubble' },
+          _react2.default.createElement(
+            'h1',
+            null,
+            name
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            message
+          )
+        )
+      );
+    }
+  }, {
     key: 'renderChatMessages',
     value: function renderChatMessages() {
+      var _this3 = this;
+
       return this.state.messages.map(function (message, i) {
-        return _react2.default.createElement(
-          'li',
-          { key: 'message-' + i },
-          message
-        );
+        message = JSON.parse(message);
+        if (message.user === _this3.state.currentUser) {
+          return _this3.renderChatBubble(_this3.state.currentUser, message.message, 'message-' + i, 'own-message');
+        } else if (message.user === 'SemaBot') {
+          return _this3.renderChatBubble('SemaBot', message.message, 'bot-message-' + i, 'bot-message');
+        } else {
+          return _this3.renderChatBubble(message.user, message.message, 'message-' + i);
+        }
       });
     }
   }, {
@@ -22316,7 +22359,7 @@ var Chat = function (_React$Component) {
         { className: 'chat-container' },
         _react2.default.createElement(
           'ul',
-          { className: 'chat-messages' },
+          { id: 'chat-messages', className: 'chat-messages' },
           this.renderChatMessages()
         ),
         _react2.default.createElement(
@@ -22326,7 +22369,7 @@ var Chat = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'chat-submit', onClick: this.handleMessageSubmit },
-            'Send'
+            _react2.default.createElement('i', { className: 'fa fa-paper-plane', 'aria-hidden': 'true' })
           )
         )
       );

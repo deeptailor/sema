@@ -10,8 +10,9 @@ app.get('/', function(req,res){
 });
 
 io.on('connection', function(socket){
+  var userConnected = JSON.stringify({user: "SemaBot", message: "a new user just connected"});
+  io.emit('send:message', userConnected);
   socket.on('send:message', function(msg){
-    console.log(msg);
     socket.broadcast.emit('send:message', msg)
   });
 });
