@@ -16,6 +16,11 @@ class Chat extends React.Component{
   componentDidMount(){
     socket.on('init', this._initialize);
     socket.on('send:message', this._messageReceive);
+    document.addEventListener('keydown', (e) => {
+      if(e.keyCode === 13){
+        this.handleMessageSubmit();
+      }
+    });
   }
 
   _initialize(data) {

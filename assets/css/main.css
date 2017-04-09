@@ -162,7 +162,7 @@
   box-sizing: border-box;
   overflow-y: scroll;
   border-radius: 10px 10px 0 0;
-  background: rgba(0, 0, 0, 1);
+  background: #eeeeee;
 }
 
 .chat-bubble-container{
@@ -181,10 +181,11 @@
   position: relative;
   border-radius: 0 10px 10px 10px;
   border: solid white;
+  overflow-y: scroll;
 }
 
 .chat-bubble h1{
-  color: #00ff3d;
+  color: #003bb1;
   margin-bottom: 5px;
 }
 
@@ -207,6 +208,15 @@
   align-items: center;
 }
 
+.bot-message .chat-bubble{
+  background: #a0d6ff;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.bot-message .chat-bubble h1{
+  display: none;
+}
+
 .chat-input-container{
   display: flex;
   height: 50px;
@@ -214,7 +224,7 @@
   font-size: 18px;
   padding: 10px;
   box-sizing: border-box;
-  background: #ddeed5;
+  background: #bbbbbb;
   border-radius: 0 0 10px 10px;
 }
 

@@ -22353,8 +22353,15 @@ var Chat = function (_React$Component) {
   _createClass(Chat, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var _this2 = this;
+
       socket.on('init', this._initialize);
       socket.on('send:message', this._messageReceive);
+      document.addEventListener('keydown', function (e) {
+        if (e.keyCode === 13) {
+          _this2.handleMessageSubmit();
+        }
+      });
     }
   }, {
     key: '_initialize',
@@ -22411,16 +22418,16 @@ var Chat = function (_React$Component) {
   }, {
     key: 'renderChatMessages',
     value: function renderChatMessages() {
-      var _this2 = this;
+      var _this3 = this;
 
       return this.state.messages.map(function (message, i) {
         message = JSON.parse(message);
-        if (message.user === _this2.state.currentUser) {
-          return _this2.renderChatBubble(_this2.state.currentUser, message.message, 'message-' + i, 'own-message');
+        if (message.user === _this3.state.currentUser) {
+          return _this3.renderChatBubble(_this3.state.currentUser, message.message, 'message-' + i, 'own-message');
         } else if (message.user === 'SemaBot') {
-          return _this2.renderChatBubble('SemaBot', message.message, 'bot-message-' + i, 'bot-message');
+          return _this3.renderChatBubble('SemaBot', message.message, 'bot-message-' + i, 'bot-message');
         } else {
-          return _this2.renderChatBubble(message.user, message.message, 'message-' + i);
+          return _this3.renderChatBubble(message.user, message.message, 'message-' + i);
         }
       });
     }
