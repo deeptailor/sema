@@ -13,6 +13,11 @@ class Chat extends React.Component{
     this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
   }
 
+  componentWillUpdate(){
+    var chatBox = document.getElementById('chat-messages');
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
   componentDidMount(){
     socket.on('init', this._initialize);
     socket.on('send:message', this._messageReceive);
@@ -73,7 +78,7 @@ class Chat extends React.Component{
   render(){
     return(
       <div className="chat-container">
-        <ul className="chat-messages">
+        <ul id="chat-messages" className="chat-messages">
           {this.renderChatMessages()}
         </ul>
         <div className="chat-input-container">

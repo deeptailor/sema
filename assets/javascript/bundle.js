@@ -22351,6 +22351,12 @@ var Chat = function (_React$Component) {
   }
 
   _createClass(Chat, [{
+    key: 'componentWillUpdate',
+    value: function componentWillUpdate() {
+      var chatBox = document.getElementById('chat-messages');
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _this2 = this;
@@ -22439,7 +22445,7 @@ var Chat = function (_React$Component) {
         { className: 'chat-container' },
         _react2.default.createElement(
           'ul',
-          { className: 'chat-messages' },
+          { id: 'chat-messages', className: 'chat-messages' },
           this.renderChatMessages()
         ),
         _react2.default.createElement(
