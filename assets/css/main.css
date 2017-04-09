@@ -6,6 +6,8 @@
   justify-content: center;
 }
 
+/*Splash*/
+
 .splash-container{
   background: url('https://res.cloudinary.com/deeptailor/image/upload/v1491372128/sema/sema-splash.jpg');
   background-size: cover;
@@ -63,13 +65,12 @@
 
 .splash-buttons div{
   text-align: center;
+  padding-bottom: 3px;
 }
 
 .splash-buttons div:hover {
   cursor: pointer;
   border-bottom: 1px solid white;
-  padding-bottom: 3px;
-
 }
 
 .splash-header h1 {
@@ -197,3 +198,16 @@
 
 
 /*Media*/
+
+@media screen and (max-width: 480px) {
+  .splash-header {
+      display:flex;
+      flex-direction: column;
+  }
+  .splash-header h1 {
+    left:0;
+  }
+  .splash-buttons {
+    margin: 0;
+  }
+}
