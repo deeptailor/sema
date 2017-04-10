@@ -22491,7 +22491,7 @@ var Splash = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'enter-chat-button', onClick: this.clickEnterChat },
-                'Enter Chat'
+                _react2.default.createElement('i', { className: 'fa fa-share', 'aria-hidden': 'true' })
               )
             )
           )

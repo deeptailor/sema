@@ -94,9 +94,9 @@
   border: 2px solid white;
   border-radius: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   top:40%;
 }
 
@@ -109,8 +109,8 @@
   box-sizing: border-box;
   border-radius: 5px;
   font-size: 16px;
-  margin: 0 0 20px 0;
-  padding: 0 10px;
+  /*margin: 0 0 20px 0;*/
+  /*padding: 0 10px;*/
   font-family: 'Raleway', sans-serif;
   color: rgba(240,240,240,0.8);
 }
@@ -122,10 +122,10 @@
 }
 
 .enter-chat-button {
-  width: 100px;
-  height: 30px;
-  border: 2px solid rgba(0,0,0,0.2);
-  background: rgba(0,0,0,0.4);
+  width: 40px;
+  height: 36px;
+  border: 2px solid rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.2);
   color: white;
   border-radius: 5px;
   font-size: 16px;
