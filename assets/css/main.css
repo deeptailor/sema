@@ -281,11 +281,8 @@ input[type="text"]{
 
 /*Media*/
 
-<<<<<<< HEAD
-@media screen and (max-width: 510px) {
-=======
-@media (orientation: portrait) and (max-width: 480px) {
->>>>>>> ff4a39dc78c3546c96c5a5f7309a065f6d5080f3
+@media (orientation: portrait) and (max-width: 510px) {
+
   .splash-header {
       display:flex;
       flex-direction: column;
