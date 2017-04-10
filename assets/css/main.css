@@ -164,9 +164,7 @@
 }
 
 .chat-messages{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
   width: 100%;
   height: 90%;
   padding: 10px 5px;
@@ -174,29 +172,29 @@
   overflow-y: scroll;
   border-radius: 10px 10px 0 0;
   background: #eeeeee;
+  text-align: center;
 }
 
 .chat-bubble-container{
-  display: flex;
-  align-items: flex-start;
+  display: inline-block;
   padding: 5px;
-  margin-bottom: 53px;
   color: white;
   width: 90%;
   min-height: 30px;
-  flex: 1;
+  text-align: left;
 }
 
 .chat-bubble{
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
+  float: left;
   max-width: 33%;
   background: white;
   color: black;
   padding: 10px;
-  position: relative;
   border-radius: 0 10px 10px 10px;
   border: solid white;
+  clear: both;
+  overflow: scroll;
 }
 
 .chat-bubble h1{
@@ -210,13 +208,10 @@
   flex-shrink: 1;
 }
 
-.own-message{
-  justify-content: flex-end;
-}
-
 .own-message .chat-bubble{
   border-radius: 10px 0 10px 10px;
   background: #ddeed5;
+  float: right;
 }
 
 .own-message .chat-bubble h1{
@@ -224,17 +219,18 @@
 }
 
 .bot-message{
-  justify-content: center;
-}
-
-.bot-message .chat-bubble p{
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 .bot-message .chat-bubble{
   background: #a0d6ff;
   border-radius: 10px 10px 10px 10px;
+  float: none;
+}
+
+.bot-message .chat-bubble p{
+  display: flex;
+  justify-content: center;
 }
 
 .bot-message .chat-bubble h1{
@@ -285,7 +281,11 @@ input[type="text"]{
 
 /*Media*/
 
+<<<<<<< HEAD
 @media screen and (max-width: 510px) {
+=======
+@media (orientation: portrait) and (max-width: 480px) {
+>>>>>>> ff4a39dc78c3546c96c5a5f7309a065f6d5080f3
   .splash-header {
       display:flex;
       flex-direction: column;

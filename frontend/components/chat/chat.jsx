@@ -18,12 +18,6 @@ class Chat extends React.Component{
     $("body").append(`<script>var socket = io();</script>`);
   }
 
-  componentWillUpdate(){
-    var chatBox = document.getElementById('chat-messages');
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }
-
-
   componentDidMount(){
     socket.on('init', this._initialize);
     socket.on('send:message', this._messageReceive);
@@ -33,6 +27,11 @@ class Chat extends React.Component{
       }
     });
     $('.chat-input').focus();
+  }
+
+  componentDidUpdate(){
+    var chatBox = document.getElementById('chat-messages');
+    chatBox.scrollTop = chatBox.scrollHeight;
   }
 
   _initialize(data) {

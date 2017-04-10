@@ -22271,12 +22271,6 @@ var Chat = function (_React$Component) {
       (0, _jquery2.default)("body").append('<script>var socket = io();</script>');
     }
   }, {
-    key: 'componentWillUpdate',
-    value: function componentWillUpdate() {
-      var chatBox = document.getElementById('chat-messages');
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
-  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _this2 = this;
@@ -22289,6 +22283,12 @@ var Chat = function (_React$Component) {
         }
       });
       (0, _jquery2.default)('.chat-input').focus();
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      var chatBox = document.getElementById('chat-messages');
+      chatBox.scrollTop = chatBox.scrollHeight;
     }
   }, {
     key: '_initialize',
