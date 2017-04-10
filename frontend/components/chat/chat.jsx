@@ -46,13 +46,34 @@ class Chat extends React.Component{
   }
 
   handleMessageSubmit() {
-      var messageObject = {user: this.state.currentUser, message: $('.chat-input').val()};
-      var message = JSON.stringify(messageObject);
+      var messageText = $('.chat-input').val();
+      var messageObject = {user: this.state.currentUser, message: messageText};
       $('.chat-input').val('');
+
+      if(messageText.includes('http')){
+        messageObject.hyperlink = true;
+      }
+
+      var message = JSON.stringify(messageObject);
+
+
       var {messages} = this.state;
       messages.push(message);
       this.setState({messages});
       socket.emit('send:message', message);
+  }
+
+  renderChatBubbleHyperlink(name, message, key, className=""){
+    return(
+      <li key={key} className={`chat-bubble-container ${className}`}>
+        <div className="chat-bubble">
+          <h1>{name}</h1>
+          <a href={message} target="_blank" style={{color: "blue"}}>{message}</a>
+        </div>
+        <br/>
+        <br/>
+      </li>
+    );
   }
 
   renderChatBubble(name, message, key, className=""){
@@ -72,6 +93,17 @@ class Chat extends React.Component{
     return(
       this.state.messages.map((message,i) => {
         message = JSON.parse(message);
+
+        if(message.hyperlink){
+          if(message.user === this.state.currentUser){
+            return(this.renderChatBubbleHyperlink(this.state.currentUser, message.message, `message-${i}`, 'own-message'));
+          } else if(message.user === 'SemaBot'){
+            return(this.renderChatBubbleHyperlink('SemaBot', message.message, `bot-message-${i}`, 'bot-message'));
+          } else {
+            return(this.renderChatBubbleHyperlink(message.user, message.message, `message-${i}`));
+          }
+        }
+
         if(message.user === this.state.currentUser){
           return(this.renderChatBubble(this.state.currentUser, message.message, `message-${i}`, 'own-message'));
         } else if(message.user === 'SemaBot'){
