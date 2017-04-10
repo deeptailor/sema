@@ -33,7 +33,7 @@ class Splash extends React.Component{
                 </div>
                 <form className="splash-form">
                   <input className="nickname" type="text" placeholder="Please Enter Your Nickname"></input>
-                  <div className="enter-chat-button" onClick={this.clickEnterChat}>Enter Chat</div>
+                  <div className="enter-chat-button" onClick={this.clickEnterChat}><i className="fa fa-share" aria-hidden="true"></i></div>
                 </form>
               </div>
             </div>
