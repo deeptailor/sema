@@ -97,7 +97,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
   top:40%;
 }
 
@@ -286,7 +285,7 @@ input[type="text"]{
 
 /*Media*/
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 510px) {
   .splash-header {
       display:flex;
       flex-direction: column;
