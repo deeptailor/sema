@@ -63,6 +63,8 @@ class Chat extends React.Component{
           <h1>{name}</h1>
           <p>{message}</p>
         </div>
+        <br/>
+        <br/>
       </li>
     );
   }
@@ -90,7 +92,7 @@ class Chat extends React.Component{
             {this.renderChatMessages()}
           </ul>
           <div className="chat-input-container">
-            <input className="chat-input" placeholder="Enter Text Here"></input>
+            <input className="chat-input" type="text" placeholder="Enter Text Here"></input>
             <div className="chat-submit" onClick={this.handleMessageSubmit}><i className="fa fa-paper-plane" aria-hidden="true"></i></div>
           </div>
         </div>

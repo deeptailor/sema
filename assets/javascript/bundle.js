@@ -22425,7 +22425,9 @@ var Chat = function (_React$Component) {
             null,
             message
           )
-        )
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null)
       );
     }
   }, {
@@ -22461,7 +22463,7 @@ var Chat = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'chat-input-container' },
-            _react2.default.createElement('input', { className: 'chat-input', placeholder: 'Enter Text Here' }),
+            _react2.default.createElement('input', { className: 'chat-input', type: 'text', placeholder: 'Enter Text Here' }),
             _react2.default.createElement(
               'div',
               { className: 'chat-submit', onClick: this.handleMessageSubmit },

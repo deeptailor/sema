@@ -184,13 +184,12 @@
   color: white;
   width: 90%;
   min-height: 30px;
-  flex-grow: 1;
+  flex: 1;
 }
 
 .chat-bubble{
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   max-width: 33%;
   background: white;
   color: black;
@@ -198,7 +197,6 @@
   position: relative;
   border-radius: 0 10px 10px 10px;
   border: solid white;
-  height: 100%;
 }
 
 .chat-bubble h1{
@@ -260,6 +258,10 @@
   box-sizing: border-box;
   font-size: 18px;
   font-family: 'Raleway', sans-serif;
+}
+
+input[type="text"]{
+  font-size: 16px;
 }
 
 .chat-submit{
