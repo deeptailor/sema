@@ -12,7 +12,7 @@ app.get('/', function(req,res){
 io.on('connection', function(socket){
   var userConnected = JSON.stringify({user: "SemaBot", message: "a new user just joined"});
   var userDisconnected = JSON.stringify({user: "SemaBot", message: "a user just left"});
-  
+
   io.emit('send:message', userConnected);
 
   socket.on('send:message', function(msg){
@@ -26,6 +26,6 @@ io.on('connection', function(socket){
 });
 
 
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+http.listen(8080, function(){
+  console.log('listening on *:8080');
 });
