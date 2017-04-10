@@ -22309,14 +22309,47 @@ var Chat = function (_React$Component) {
   }, {
     key: 'handleMessageSubmit',
     value: function handleMessageSubmit() {
-      var messageObject = { user: this.state.currentUser, message: (0, _jquery2.default)('.chat-input').val() };
-      var message = JSON.stringify(messageObject);
+      var messageText = (0, _jquery2.default)('.chat-input').val();
+      var messageObject = { user: this.state.currentUser, message: messageText };
       (0, _jquery2.default)('.chat-input').val('');
+
+      if (messageText.includes('http')) {
+        messageObject.hyperlink = true;
+      }
+
+      var message = JSON.stringify(messageObject);
+
       var messages = this.state.messages;
 
       messages.push(message);
       this.setState({ messages: messages });
       socket.emit('send:message', message);
+    }
+  }, {
+    key: 'renderChatBubbleHyperlink',
+    value: function renderChatBubbleHyperlink(name, message, key) {
+      var className = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "";
+
+      return _react2.default.createElement(
+        'li',
+        { key: key, className: 'chat-bubble-container ' + className },
+        _react2.default.createElement(
+          'div',
+          { className: 'chat-bubble' },
+          _react2.default.createElement(
+            'h1',
+            null,
+            name
+          ),
+          _react2.default.createElement(
+            'a',
+            { href: message, target: '_blank', style: { color: "blue" } },
+            message
+          )
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null)
+      );
     }
   }, {
     key: 'renderChatBubble',
@@ -22351,6 +22384,17 @@ var Chat = function (_React$Component) {
 
       return this.state.messages.map(function (message, i) {
         message = JSON.parse(message);
+
+        if (message.hyperlink) {
+          if (message.user === _this3.state.currentUser) {
+            return _this3.renderChatBubbleHyperlink(_this3.state.currentUser, message.message, 'message-' + i, 'own-message');
+          } else if (message.user === 'SemaBot') {
+            return _this3.renderChatBubbleHyperlink('SemaBot', message.message, 'bot-message-' + i, 'bot-message');
+          } else {
+            return _this3.renderChatBubbleHyperlink(message.user, message.message, 'message-' + i);
+          }
+        }
+
         if (message.user === _this3.state.currentUser) {
           return _this3.renderChatBubble(_this3.state.currentUser, message.message, 'message-' + i, 'own-message');
         } else if (message.user === 'SemaBot') {
