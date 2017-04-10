@@ -6,6 +6,22 @@ class Splash extends React.Component{
     super(props);
     this.clickEnterChat = this.clickEnterChat.bind(this);
     this.routerPush = this.routerPush.bind(this);
+    this.clickEnterChat = this.clickEnterChat.bind(this);
+    this.pressEnterChat = this.pressEnterChat.bind(this);
+  }
+
+  componentWillMount(){
+    document.addEventListener('keydown', this.pressEnterChat);
+  }
+
+  componentWillUnmount(){
+    document.removeEventListener('keydown', this.pressEnterChat);
+  }
+
+  pressEnterChat(e){
+    if(e.keyCode === 13){
+      this.clickEnterChat();
+    }
   }
 
   clickEnterChat(){
