@@ -305,6 +305,10 @@
     box-sizing: padding-box;
   }
 
+  .chat-bubble{
+    max-width: 60%; 
+  }
+
   .chat-input[type="text"]{
     font-size: 1em;
   }
