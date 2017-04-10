@@ -22351,6 +22351,12 @@ var Chat = function (_React$Component) {
   }
 
   _createClass(Chat, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      (0, _jquery2.default)("body").append('<script src="/socket.io/socket.io.js"></script>');
+      (0, _jquery2.default)("body").append('<script>var socket = io();</script>');
+    }
+  }, {
     key: 'componentWillUpdate',
     value: function componentWillUpdate() {
       var chatBox = document.getElementById('chat-messages');
@@ -22368,6 +22374,7 @@ var Chat = function (_React$Component) {
           _this2.handleMessageSubmit();
         }
       });
+      (0, _jquery2.default)('.chat-input').focus();
     }
   }, {
     key: '_initialize',
@@ -22442,20 +22449,24 @@ var Chat = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'chat-container' },
-        _react2.default.createElement(
-          'ul',
-          { id: 'chat-messages', className: 'chat-messages' },
-          this.renderChatMessages()
-        ),
+        { className: 'chat-outer-container' },
         _react2.default.createElement(
           'div',
-          { className: 'chat-input-container' },
-          _react2.default.createElement('input', { className: 'chat-input', placeholder: 'Enter Text Here' }),
+          { className: 'chat-container' },
+          _react2.default.createElement(
+            'ul',
+            { id: 'chat-messages', className: 'chat-messages' },
+            this.renderChatMessages()
+          ),
           _react2.default.createElement(
             'div',
-            { className: 'chat-submit', onClick: this.handleMessageSubmit },
-            _react2.default.createElement('i', { className: 'fa fa-paper-plane', 'aria-hidden': 'true' })
+            { className: 'chat-input-container' },
+            _react2.default.createElement('input', { className: 'chat-input', placeholder: 'Enter Text Here' }),
+            _react2.default.createElement(
+              'div',
+              { className: 'chat-submit', onClick: this.handleMessageSubmit },
+              _react2.default.createElement('i', { className: 'fa fa-paper-plane', 'aria-hidden': 'true' })
+            )
           )
         )
       );
