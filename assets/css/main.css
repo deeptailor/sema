@@ -256,10 +256,6 @@
   font-family: 'Raleway', sans-serif;
 }
 
-input[type="text"]{
-  font-size: 16px;
-}
-
 .chat-submit{
   width: 80px;
   border: 2px solid rgba(0,0,0,0.2);
@@ -281,7 +277,7 @@ input[type="text"]{
 
 /*Media*/
 
-@media (orientation: portrait) and (max-width: 510px) {
+@media (orientation: portrait){
 
   .splash-header {
       display:flex;
@@ -289,8 +285,23 @@ input[type="text"]{
   }
   .splash-header h1 {
     left:0;
+    font-size: 80px;
   }
   .splash-buttons {
     margin: 0;
+    font-size: 26px;
+  }
+
+  .chat-outer-container{
+    font-size: 26px;
+  }
+
+  .chat-container{
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .chat-input[type="text"]{
+    font-size: 24px;
   }
 }
