@@ -56,6 +56,9 @@ class Chat extends React.Component{
 
   handleMessageSubmit() {
       var messageText = $('.chat-input').val();
+      if(messageText === ""){
+        return;
+      }
       var messageObject = {user: this.state.currentUser, message: messageText};
       $('.chat-input').val('');
 

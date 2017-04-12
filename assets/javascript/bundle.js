@@ -22405,6 +22405,9 @@ var Chat = function (_React$Component) {
     key: 'handleMessageSubmit',
     value: function handleMessageSubmit() {
       var messageText = (0, _jquery2.default)('.chat-input').val();
+      if (messageText === "") {
+        return;
+      }
       var messageObject = { user: this.state.currentUser, message: messageText };
       (0, _jquery2.default)('.chat-input').val('');
 
@@ -22599,6 +22602,11 @@ var Splash = function (_React$Component) {
     value: function clickEnterChat() {
       document.cookie = "";
       var nickname = (0, _jquery2.default)('.nickname').val();
+
+      if (nickname === '') {
+        return;
+      }
+
       (0, _jquery2.default)('body').data('currentUser', nickname);
       this.routerPush('chat');
     }
@@ -22615,41 +22623,45 @@ var Splash = function (_React$Component) {
         { className: 'splash-container' },
         _react2.default.createElement(
           'div',
-          { className: 'splash-overlay' },
+          { className: 'splash-colors' },
           _react2.default.createElement(
             'div',
-            { className: 'splash-inner-container' },
+            { className: 'splash-overlay' },
             _react2.default.createElement(
               'div',
-              { className: 'splash-header' },
-              _react2.default.createElement(
-                'h1',
-                null,
-                'sema'
-              ),
+              { className: 'splash-inner-container' },
               _react2.default.createElement(
                 'div',
-                { className: 'splash-buttons' },
+                { className: 'splash-header' },
                 _react2.default.createElement(
-                  'div',
+                  'h1',
                   null,
-                  'About'
+                  'sema'
                 ),
                 _react2.default.createElement(
                   'div',
-                  null,
-                  'Contact'
+                  { className: 'splash-buttons' },
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    'About'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    'Contact'
+                  )
                 )
-              )
-            ),
-            _react2.default.createElement(
-              'form',
-              { className: 'splash-form' },
-              _react2.default.createElement('input', { className: 'nickname', type: 'text', placeholder: 'Please Enter Your Nickname' }),
+              ),
               _react2.default.createElement(
-                'div',
-                { className: 'enter-chat-button', onClick: this.clickEnterChat },
-                _react2.default.createElement('i', { className: 'fa fa-share', 'aria-hidden': 'true' })
+                'form',
+                { className: 'splash-form' },
+                _react2.default.createElement('input', { className: 'nickname', type: 'text', placeholder: 'Please Enter Your Nickname' }),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'enter-chat-button', onClick: this.clickEnterChat },
+                  _react2.default.createElement('i', { className: 'fa fa-share', 'aria-hidden': 'true' })
+                )
               )
             )
           )

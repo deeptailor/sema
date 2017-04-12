@@ -27,6 +27,11 @@ class Splash extends React.Component{
   clickEnterChat(){
     document.cookie = "";
     let nickname = $('.nickname').val();
+
+    if(nickname === ''){
+      return;
+    }
+
     $('body').data('currentUser', nickname);
     this.routerPush('chat');
   }
@@ -38,6 +43,7 @@ class Splash extends React.Component{
   render(){
     return(
         <div className='splash-container'>
+          <div className="splash-colors">
             <div className="splash-overlay">
               <div className="splash-inner-container">
                 <div className="splash-header">
@@ -53,6 +59,7 @@ class Splash extends React.Component{
                 </form>
               </div>
             </div>
+          </div>
         </div>
     )
   }
