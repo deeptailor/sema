@@ -11,6 +11,7 @@ class Chat extends React.Component{
     this._initialize = this._initialize.bind(this);
     this._messageReceive = this._messageReceive.bind(this);
     this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
+    this.handleEnterSubmit = this.handleEnterSubmit.bind(this);
   }
 
   componentWillMount(){
@@ -21,12 +22,14 @@ class Chat extends React.Component{
   componentDidMount(){
     socket.on('init', this._initialize);
     socket.on('send:message', this._messageReceive);
-    document.addEventListener('keydown', (e) => {
-      if(e.keyCode === 13){
-        this.handleMessageSubmit();
-      }
-    });
+
+    document.addEventListener('keydown', this.handleEnterSubmit);
+
     $('.chat-input').focus();
+  }
+
+  componentWillUnmount(){
+    document.removeEventListener('keydown', this.handleEnterSubmit);
   }
 
   componentDidUpdate(){
@@ -45,8 +48,17 @@ class Chat extends React.Component{
       this.setState({messages});
   }
 
+  handleEnterSubmit(e){
+    if(e.keyCode === 13){
+      this.handleMessageSubmit();
+    }
+  }
+
   handleMessageSubmit() {
       var messageText = $('.chat-input').val();
+      if(messageText === ""){
+        return;
+      }
       var messageObject = {user: this.state.currentUser, message: messageText};
       $('.chat-input').val('');
 

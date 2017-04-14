@@ -8,6 +8,15 @@
 
 /*Splash*/
 
+@keyframes slide {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 600vw;
+  }
+}
+
 .splash-container{
   background: url('https://res.cloudinary.com/deeptailor/image/upload/v1491372128/sema/sema-splash.jpg');
   background-size: cover;
@@ -18,10 +27,18 @@
   position: relative;
 }
 
+.splash-colors{
+  height: 100%;
+  width: 100%;
+  background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, lime 14.28%, cyan 21.42%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+  background-size: 600vw 600vw;
+  -webkit-animation: 'slide' 50s infinite linear forwards;
+}
+
 .splash-overlay{
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rbga(0,0,0,0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,7 +87,7 @@
 }
 
 .splash-buttons div:before {
-  content: "";
+   content: "";
    position: absolute;
    width: 100%;
    height: 1px;
@@ -128,8 +145,7 @@
   box-sizing: border-box;
   border-radius: 5px;
   font-size: 16px;
-  /*margin: 0 0 20px 0;*/
-  /*padding: 0 10px;*/
+  text-align: center;
   font-family: 'Raleway', sans-serif;
   color: rgba(240,240,240,0.8);
 }
@@ -314,7 +330,6 @@
   }
 
   .chat-outer-container{
-    font-size: 3em;
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
@@ -322,10 +337,11 @@
 
   .chat-container{
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     box-sizing: padding-box;
   }
 
+<<<<<<< HEAD
   .chat-bubble{
     max-width: 60%;
   }
@@ -333,4 +349,6 @@
   .chat-input[type="text"]{
     font-size: 1em;
   }
+=======
+>>>>>>> 678b7f275fa15329d608dd6f5700ca757e530c4a
 }

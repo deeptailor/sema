@@ -6,11 +6,32 @@ class Splash extends React.Component{
     super(props);
     this.clickEnterChat = this.clickEnterChat.bind(this);
     this.routerPush = this.routerPush.bind(this);
+    this.clickEnterChat = this.clickEnterChat.bind(this);
+    this.pressEnterChat = this.pressEnterChat.bind(this);
+  }
+
+  componentWillMount(){
+    document.addEventListener('keydown', this.pressEnterChat);
+  }
+
+  componentWillUnmount(){
+    document.removeEventListener('keydown', this.pressEnterChat);
+  }
+
+  pressEnterChat(e){
+    if(e.keyCode === 13){
+      this.clickEnterChat();
+    }
   }
 
   clickEnterChat(){
     document.cookie = "";
     let nickname = $('.nickname').val();
+
+    if(nickname === ''){
+      return;
+    }
+
     $('body').data('currentUser', nickname);
     this.routerPush('chat');
   }
@@ -22,6 +43,7 @@ class Splash extends React.Component{
   render(){
     return(
         <div className='splash-container'>
+          <div className="splash-colors">
             <div className="splash-overlay">
               <div className="splash-inner-container">
                 <div className="splash-header">
@@ -37,6 +59,7 @@ class Splash extends React.Component{
                 </form>
               </div>
             </div>
+          </div>
         </div>
     )
   }
