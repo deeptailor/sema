@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import Navbar from '../navbar/navbar';
 
 class Splash extends React.Component{
   constructor(props){
@@ -24,6 +25,10 @@ class Splash extends React.Component{
     }
   }
 
+  routerPush(route){
+    this.props.router.push(route);
+  }
+
   clickEnterChat(){
     document.cookie = "";
     let nickname = $('.nickname').val();
@@ -36,9 +41,6 @@ class Splash extends React.Component{
     this.routerPush('chat');
   }
 
-  routerPush(route){
-    this.props.router.push(route);
-  }
 
   render(){
     return(
@@ -46,14 +48,7 @@ class Splash extends React.Component{
           <div className="splash-colors">
             <div className="splash-overlay">
               <div className="splash-inner-container">
-                <div className="splash-header">
-                  <h1>sema</h1>
-                  <div className="splash-buttons">
-                    <div>Home</div>
-                    <div>About</div>
-                    <div>Contact</div>
-                  </div>
-                </div>
+                <Navbar className="splash-navbar"/>
                 <form className="splash-form">
                   <input className="nickname" type="text" placeholder="Please Enter Your Nickname"></input>
                   <div className="enter-chat-button" onClick={this.clickEnterChat}><i className="fa fa-share" aria-hidden="true"></i></div>
