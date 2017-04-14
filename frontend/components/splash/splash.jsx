@@ -49,6 +49,7 @@ class Splash extends React.Component{
                 <div className="splash-header">
                   <h1>sema</h1>
                   <div className="splash-buttons">
+                    <div>Home</div>
                     <div>About</div>
                     <div>Contact</div>
                   </div>

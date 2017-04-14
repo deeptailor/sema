@@ -22558,6 +22558,11 @@ var Splash = function (_React$Component) {
                   _react2.default.createElement(
                     'div',
                     null,
+                    'Home'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    null,
                     'About'
                   ),
                   _react2.default.createElement(
