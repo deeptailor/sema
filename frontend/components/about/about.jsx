@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../navbar/navbar';
 
 class About extends React.Component {
   constructor(props) {
@@ -7,8 +8,13 @@ class About extends React.Component {
 
   render() {
     return(
-      <div>
-        About
+      <div className="about-overlay">
+        <div className="about-container">
+          <Navbar/>
+          <div className="about-title">
+            About
+          </div>
+        </div>
       </div>
     )
   }

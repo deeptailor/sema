@@ -37171,6 +37171,8 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = __webpack_require__(220);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37243,7 +37245,7 @@ var Navbar = function (_React$Component) {
   return Navbar;
 }(_react2.default.Component);
 
-exports.default = Navbar;
+exports.default = (0, _reactRouter.withRouter)(Navbar);
 
 /***/ }),
 /* 239 */
@@ -37261,6 +37263,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _navbar = __webpack_require__(238);
+
+var _navbar2 = _interopRequireDefault(_navbar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37284,8 +37290,17 @@ var About = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
-        'About'
+        { className: 'about-overlay' },
+        _react2.default.createElement(
+          'div',
+          { className: 'about-container' },
+          _react2.default.createElement(_navbar2.default, null),
+          _react2.default.createElement(
+            'div',
+            { className: 'about-title' },
+            'About'
+          )
+        )
       );
     }
   }]);

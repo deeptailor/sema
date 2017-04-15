@@ -4,6 +4,7 @@ import $ from 'jquery';
 function getCurrentUser(){
   return $('body').data('currentUser');
 }
+
 class Chat extends React.Component{
   constructor(props){
     super(props);
