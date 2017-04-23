@@ -22453,8 +22453,8 @@ var About = function (_React$Component) {
           _react2.default.createElement(_navbar2.default, null),
           _react2.default.createElement(
             'div',
-            { className: 'about-title' },
-            'About'
+            { className: 'about-content' },
+            'We are two passianted software engineers who love to build apps in our free time. Sema is a public online chatroom that allows users to talk and share information. We are currently improving it to add more features such as creating private room, friend list and posting pictures.'
           )
         )
       );

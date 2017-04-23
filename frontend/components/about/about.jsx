@@ -11,8 +11,14 @@ class About extends React.Component {
       <div className="about-overlay">
         <div className="about-container">
           <Navbar/>
-          <div className="about-title">
-            About
+          <div className="about-content">
+            We are two passianted software engineers who
+            love to build apps in our free time. Sema is
+            a public online chatroom that allows users to
+            talk and share information. We are currently
+            improving it to add more features such as
+            creating private room, friend list and posting
+            pictures.
           </div>
         </div>
       </div>
