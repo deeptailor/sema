@@ -18525,7 +18525,8 @@ var Navbar = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this, props));
 
     _this.goHompage = _this.goHompage.bind(_this);
-    _this.goAboutpage = _this.goAboutpage.bind(_this);
+    _this.goAboutPage = _this.goAboutPage.bind(_this);
+    _this.goContactPage = _this.goContactPage.bind(_this);
     return _this;
   }
 
@@ -18535,9 +18536,14 @@ var Navbar = function (_React$Component) {
       this.props.router.push('/');
     }
   }, {
-    key: 'goAboutpage',
-    value: function goAboutpage() {
+    key: 'goAboutPage',
+    value: function goAboutPage() {
       this.props.router.push('about');
+    }
+  }, {
+    key: 'goContactPage',
+    value: function goContactPage() {
+      this.props.router.push('contact');
     }
   }, {
     key: 'render',
@@ -18563,12 +18569,12 @@ var Navbar = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { onClick: this.goAboutpage },
+              { onClick: this.goAboutPage },
               'About'
             ),
             _react2.default.createElement(
               'div',
-              null,
+              { onClick: this.goContactPage },
               'Contact'
             )
           )
@@ -22373,6 +22379,10 @@ var _about = __webpack_require__(114);
 
 var _about2 = _interopRequireDefault(_about);
 
+var _contact = __webpack_require__(239);
+
+var _contact2 = _interopRequireDefault(_contact);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _redirectIfNoNickname(nextState, replace) {
@@ -22387,6 +22397,7 @@ var Root = function Root() {
     { history: _reactRouter.hashHistory },
     _react2.default.createElement(_reactRouter.Route, { path: '/', component: _splash2.default }),
     _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _about2.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/contact', component: _contact2.default }),
     _react2.default.createElement(_reactRouter.Route, { path: '/chat', component: _chat2.default, onEnter: _redirectIfNoNickname })
   );
 };
@@ -37308,6 +37319,180 @@ module.exports = function (str) {
 	});
 };
 
+
+/***/ }),
+/* 239 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _navbar = __webpack_require__(72);
+
+var _navbar2 = _interopRequireDefault(_navbar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Contact = function (_React$Component) {
+  _inherits(Contact, _React$Component);
+
+  function Contact(props) {
+    _classCallCheck(this, Contact);
+
+    return _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).call(this, props));
+  }
+
+  _createClass(Contact, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'contact-overlay' },
+        _react2.default.createElement(
+          'div',
+          { className: 'contact-container' },
+          _react2.default.createElement(_navbar2.default, null),
+          _react2.default.createElement(
+            'div',
+            { className: 'two-contacts' },
+            _react2.default.createElement(
+              'div',
+              { className: 'contact-box' },
+              _react2.default.createElement('img', { className: 'contact-pic', src: 'http://res.cloudinary.com/corgi1989/image/upload/v1483995060/sc4eww8jd9plubuksbcb.jpg' }),
+              _react2.default.createElement(
+                'h1',
+                { className: 'contact-title' },
+                'Deep Tailor'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'contact-content' },
+                _react2.default.createElement('i', { className: 'fa fa-mobile', 'aria-hidden': 'true' }),
+                '(415)580-8722'
+              ),
+              _react2.default.createElement(
+                'ul',
+                { className: 'contact-links' },
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    { href: 'mailto:deeptailor@gmail.com' },
+                    _react2.default.createElement('i', { className: 'fa fa-envelope', 'aria-hidden': 'true' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    { href: 'http://deeptailor.com', target: '_blank' },
+                    _react2.default.createElement('i', { className: 'fa fa-address-card', 'aria-hidden': 'true' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    { href: 'https://www.github.com/dtailor90', target: '_blank' },
+                    _react2.default.createElement('i', { className: 'fa fa-github', 'aria-hidden': 'true' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    { href: 'https://www.linkedin.com/in/deeptailor', target: '_blank' },
+                    _react2.default.createElement('i', { className: 'fa fa-linkedin-square', 'aria-hidden': 'true' })
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'contact-box' },
+              _react2.default.createElement('img', { className: 'contact-pic', src: 'http://res.cloudinary.com/corgi1989/image/upload/v1483995060/sc4eww8jd9plubuksbcb.jpg' }),
+              _react2.default.createElement(
+                'h1',
+                { className: 'contact-title' },
+                'Henry Hsu'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'contact-content' },
+                _react2.default.createElement('i', { className: 'fa fa-mobile', 'aria-hidden': 'true' }),
+                '(415)580-8722'
+              ),
+              _react2.default.createElement(
+                'ul',
+                { className: 'contact-links' },
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    { href: 'mailto:hhsu0219@gmail.com' },
+                    _react2.default.createElement('i', { className: 'fa fa-envelope', 'aria-hidden': 'true' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    { href: 'http://henryhsu.life', target: '_blank' },
+                    _react2.default.createElement('i', { className: 'fa fa-address-card', 'aria-hidden': 'true' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    { href: 'https://github.com/kobe1104', target: '_blank' },
+                    _react2.default.createElement('i', { className: 'fa fa-github', 'aria-hidden': 'true' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    { href: 'https://www.linkedin.com/in/henry-hsu-58073189/', target: '_blank' },
+                    _react2.default.createElement('i', { className: 'fa fa-linkedin-square', 'aria-hidden': 'true' })
+                  )
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Contact;
+}(_react2.default.Component);
+
+exports.default = Contact;
 
 /***/ })
 /******/ ]);

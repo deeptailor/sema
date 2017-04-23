@@ -5,15 +5,20 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.goHompage = this.goHompage.bind(this);
-    this.goAboutpage = this.goAboutpage.bind(this);
+    this.goAboutPage = this.goAboutPage.bind(this);
+    this.goContactPage = this.goContactPage.bind(this);
   }
 
   goHompage() {
     this.props.router.push('/');
   }
 
-  goAboutpage() {
+  goAboutPage() {
     this.props.router.push('about');
+  }
+
+  goContactPage() {
+    this.props.router.push('contact');
   }
 
   render() {
@@ -23,8 +28,8 @@ class Navbar extends React.Component {
           <h1>sema</h1>
           <div className="splash-buttons">
             <div onClick={this.goHompage}>Home</div>
-            <div onClick={this.goAboutpage}>About</div>
-            <div>Contact</div>
+            <div onClick={this.goAboutPage}>About</div>
+            <div onClick={this.goContactPage}>Contact</div>
           </div>
         </div>
       </div>
