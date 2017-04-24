@@ -22465,7 +22465,7 @@ var About = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'about-content' },
-            'We are two passianted software engineers who love to build apps in our free time. Sema is a public online chatroom that allows users to talk and share information. We are currently improving it to add more features such as creating private room, friend list and posting pictures.'
+            'We are two passionate software engineers who love to build apps in our free time. Sema is a public online chat room that allows users to talk and share information. We are currently improving it and adding more features such as private chat room, friend list and allowing pictures.'
           )
         )
       );
@@ -37384,7 +37384,7 @@ var Contact = function (_React$Component) {
                 'div',
                 { className: 'contact-content' },
                 _react2.default.createElement('i', { className: 'fa fa-mobile', 'aria-hidden': 'true' }),
-                '(415)580-8722'
+                '(708)369-6934'
               ),
               _react2.default.createElement(
                 'ul',

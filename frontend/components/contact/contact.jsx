@@ -15,7 +15,7 @@ class Contact extends React.Component {
             <div className="contact-box">
               <img className="contact-pic" src="https://res.cloudinary.com/deeptailor/image/upload/v1479696746/photo_transparent_o7nv36.png"></img>
               <h1 className="contact-title">Deep Tailor</h1>
-              <div className="contact-content" ><i className="fa fa-mobile" aria-hidden="true"></i>(415)580-8722</div>
+              <div className="contact-content" ><i className="fa fa-mobile" aria-hidden="true"></i>(708)369-6934</div>
               <ul className="contact-links">
                 <li><a href="mailto:deeptailor@gmail.com"><i className="fa fa-envelope" aria-hidden="true"></i></a></li>
                 <li><a href="http://deeptailor.com" target="_blank"><i className="fa fa-address-card" aria-hidden="true"></i></a></li>

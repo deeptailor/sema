@@ -214,6 +214,7 @@
   font-size: 24px;
   justify-content: center;
   align-items: center;
+  line-height: 110%;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -266,6 +267,7 @@
   width:200px;
   object-fit:contain;
   border-radius: 50%;
+  background: white;
 }
 
 .contact-title {
@@ -281,7 +283,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
 .contact-content:hover {
