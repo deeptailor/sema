@@ -37374,7 +37374,7 @@ var Contact = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'contact-box' },
-              _react2.default.createElement('img', { className: 'contact-pic', src: 'http://res.cloudinary.com/corgi1989/image/upload/v1483995060/sc4eww8jd9plubuksbcb.jpg' }),
+              _react2.default.createElement('img', { className: 'contact-pic', src: 'https://res.cloudinary.com/deeptailor/image/upload/v1479696746/photo_transparent_o7nv36.png' }),
               _react2.default.createElement(
                 'h1',
                 { className: 'contact-title' },
@@ -37430,7 +37430,7 @@ var Contact = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'contact-box' },
-              _react2.default.createElement('img', { className: 'contact-pic', src: 'http://res.cloudinary.com/corgi1989/image/upload/v1483995060/sc4eww8jd9plubuksbcb.jpg' }),
+              _react2.default.createElement('img', { className: 'contact-pic', src: 'http://res.cloudinary.com/corgi1989/image/upload/v1481740853/henry-photo-2_klryvn.png' }),
               _react2.default.createElement(
                 'h1',
                 { className: 'contact-title' },

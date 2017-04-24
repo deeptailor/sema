@@ -246,25 +246,25 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border: 1px solid white;
-
 }
 
 .contact-box {
+  width: 400px;
   height: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid white;
+  border-radius: 10px;
   background: rgba(0,0,0,0.2);
   color: white;
   font-family: 'Raleway', sans-serif;
 }
 
 .contact-pic {
-  width: 40%;
-  height: 40%;
+  height:200px;
+  width:200px;
+  object-fit:contain;
   border-radius: 50%;
 }
 
@@ -448,6 +448,12 @@
     margin: 0;
     font-size: 26px;
   }
+
+  .contact-container {
+    margin-top: 100px;
+
+  }
+
 
   .chat-outer-container{
     width: 100vw;

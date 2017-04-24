@@ -13,7 +13,7 @@ class Contact extends React.Component {
           <Navbar/>
           <div className="two-contacts">
             <div className="contact-box">
-              <img className="contact-pic" src="http://res.cloudinary.com/corgi1989/image/upload/v1483995060/sc4eww8jd9plubuksbcb.jpg"></img>
+              <img className="contact-pic" src="https://res.cloudinary.com/deeptailor/image/upload/v1479696746/photo_transparent_o7nv36.png"></img>
               <h1 className="contact-title">Deep Tailor</h1>
               <div className="contact-content" ><i className="fa fa-mobile" aria-hidden="true"></i>(415)580-8722</div>
               <ul className="contact-links">
@@ -24,7 +24,7 @@ class Contact extends React.Component {
               </ul>
             </div>
             <div className="contact-box">
-              <img className="contact-pic" src="http://res.cloudinary.com/corgi1989/image/upload/v1483995060/sc4eww8jd9plubuksbcb.jpg"></img>
+              <img className="contact-pic" src="http://res.cloudinary.com/corgi1989/image/upload/v1481740853/henry-photo-2_klryvn.png"></img>
               <h1 className="contact-title">Henry Hsu</h1>
               <div className="contact-content" ><i className="fa fa-mobile" aria-hidden="true"></i>(415)580-8722</div>
               <ul className="contact-links">
