@@ -17,10 +17,10 @@ class Contact extends React.Component {
               <h1 className="contact-title">Deep Tailor</h1>
               <div className="contact-content" ><i className="fa fa-mobile" aria-hidden="true"></i>(708)369-6934</div>
               <ul className="contact-links">
-                <li><a href="mailto:deeptailor@gmail.com"><i className="fa fa-envelope" aria-hidden="true"></i></a></li>
-                <li><a href="http://deeptailor.com" target="_blank"><i className="fa fa-address-card" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.github.com/dtailor90" target="_blank"><i className="fa fa-github" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/deeptailor" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                <li className="tooltip"><a href="mailto:deeptailor@gmail.com"><i className="fa fa-envelope" aria-hidden="true"></i></a><span className="tooltiptext">Email</span></li>
+                <li className="tooltip"><a href="http://deeptailor.com" target="_blank"><i className="fa fa-address-card" aria-hidden="true"></i></a><span className="tooltiptext">Portfolio</span></li>
+                <li className="tooltip"><a href="https://www.github.com/dtailor90" target="_blank"><i className="fa fa-github" aria-hidden="true"></i></a><span className="tooltiptext">Github</span></li>
+                <li className="tooltip"><a href="https://www.linkedin.com/in/deeptailor" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a><span className="tooltiptext">LinkedIn</span></li>
               </ul>
             </div>
             <div className="contact-box">
@@ -28,10 +28,10 @@ class Contact extends React.Component {
               <h1 className="contact-title">Henry Hsu</h1>
               <div className="contact-content" ><i className="fa fa-mobile" aria-hidden="true"></i>(415)580-8722</div>
               <ul className="contact-links">
-                <li><a href="mailto:hhsu0219@gmail.com"><i className="fa fa-envelope" aria-hidden="true"></i></a></li>
-                <li><a href="http://henryhsu.life" target="_blank"><i className="fa fa-address-card" aria-hidden="true"></i></a></li>
-                <li><a href="https://github.com/kobe1104" target="_blank"><i className="fa fa-github" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/henry-hsu-58073189/" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                <li className="tooltip"><a href="mailto:hhsu0219@gmail.com"><i className="fa fa-envelope" aria-hidden="true"></i></a><span className="tooltiptext">Email</span></li>
+                <li className="tooltip"><a href="http://henryhsu.life" target="_blank"><i className="fa fa-address-card" aria-hidden="true"></i></a><span className="tooltiptext">Portfolio</span></li>
+                <li className="tooltip"><a href="https://github.com/kobe1104" target="_blank"><i className="fa fa-github" aria-hidden="true"></i></a><span className="tooltiptext">Github</span></li>
+                <li className="tooltip"><a href="https://www.linkedin.com/in/henry-hsu-58073189/" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a><span className="tooltiptext">LinkedIn</span></li>
               </ul>
             </div>
           </div>

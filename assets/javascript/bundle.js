@@ -37391,38 +37391,58 @@ var Contact = function (_React$Component) {
                 { className: 'contact-links' },
                 _react2.default.createElement(
                   'li',
-                  null,
+                  { className: 'tooltip' },
                   _react2.default.createElement(
                     'a',
                     { href: 'mailto:deeptailor@gmail.com' },
                     _react2.default.createElement('i', { className: 'fa fa-envelope', 'aria-hidden': 'true' })
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tooltiptext' },
+                    'Email'
                   )
                 ),
                 _react2.default.createElement(
                   'li',
-                  null,
+                  { className: 'tooltip' },
                   _react2.default.createElement(
                     'a',
                     { href: 'http://deeptailor.com', target: '_blank' },
                     _react2.default.createElement('i', { className: 'fa fa-address-card', 'aria-hidden': 'true' })
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tooltiptext' },
+                    'Portfolio'
                   )
                 ),
                 _react2.default.createElement(
                   'li',
-                  null,
+                  { className: 'tooltip' },
                   _react2.default.createElement(
                     'a',
                     { href: 'https://www.github.com/dtailor90', target: '_blank' },
                     _react2.default.createElement('i', { className: 'fa fa-github', 'aria-hidden': 'true' })
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tooltiptext' },
+                    'Github'
                   )
                 ),
                 _react2.default.createElement(
                   'li',
-                  null,
+                  { className: 'tooltip' },
                   _react2.default.createElement(
                     'a',
                     { href: 'https://www.linkedin.com/in/deeptailor', target: '_blank' },
                     _react2.default.createElement('i', { className: 'fa fa-linkedin-square', 'aria-hidden': 'true' })
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tooltiptext' },
+                    'LinkedIn'
                   )
                 )
               )
@@ -37447,38 +37467,58 @@ var Contact = function (_React$Component) {
                 { className: 'contact-links' },
                 _react2.default.createElement(
                   'li',
-                  null,
+                  { className: 'tooltip' },
                   _react2.default.createElement(
                     'a',
                     { href: 'mailto:hhsu0219@gmail.com' },
                     _react2.default.createElement('i', { className: 'fa fa-envelope', 'aria-hidden': 'true' })
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tooltiptext' },
+                    'Email'
                   )
                 ),
                 _react2.default.createElement(
                   'li',
-                  null,
+                  { className: 'tooltip' },
                   _react2.default.createElement(
                     'a',
                     { href: 'http://henryhsu.life', target: '_blank' },
                     _react2.default.createElement('i', { className: 'fa fa-address-card', 'aria-hidden': 'true' })
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tooltiptext' },
+                    'Portfolio'
                   )
                 ),
                 _react2.default.createElement(
                   'li',
-                  null,
+                  { className: 'tooltip' },
                   _react2.default.createElement(
                     'a',
                     { href: 'https://github.com/kobe1104', target: '_blank' },
                     _react2.default.createElement('i', { className: 'fa fa-github', 'aria-hidden': 'true' })
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tooltiptext' },
+                    'Github'
                   )
                 ),
                 _react2.default.createElement(
                   'li',
-                  null,
+                  { className: 'tooltip' },
                   _react2.default.createElement(
                     'a',
                     { href: 'https://www.linkedin.com/in/henry-hsu-58073189/', target: '_blank' },
                     _react2.default.createElement('i', { className: 'fa fa-linkedin-square', 'aria-hidden': 'true' })
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'tooltiptext' },
+                    'LinkedIn'
                   )
                 )
               )
